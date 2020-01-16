@@ -10,7 +10,9 @@ function createWindow(){
     win = new BrowserWindow({
         title: 'ClippY',
         show : false,
-        maxHeight:400,
+        height:400,
+        width:600,
+        maxHeight:500,
         maxWidth:600
     });
 
