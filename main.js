@@ -3,23 +3,31 @@ const url = require('url');
 const path = require('path');
 
 const {app, BrowserWindow} = require('electron');
+require('electron-reload')(__dirname);
 
 let win;
 function createWindow(){
     win = new BrowserWindow({
         title: 'ClippY',
-        show : false
+        show : false,
+        maxHeight:400,
+        maxWidth:600
     });
 
 
     //Open DevTools
     win.webContents.openDevTools();
 
-    win.loadURL(url.format({
-        pathname : path.join(__dirname, 'index.html'),
-        protocol: 'file',
-        slashes : true
-    }))
+    // win.loadURL(url.format({
+    //     pathname : path.join(__dirname, 'index.html'),
+    //     protocol: 'file',
+    //     slashes : true
+    // }))
+
+    /**
+     * *To use live reload
+     */
+    win.loadURL(`file://${__dirname}/index.html`);
 
     //When WIndow closed
     win.on('ready-to-show', ()=>{
