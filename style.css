@@ -39,7 +39,34 @@ nav h1{
 main{
     background-color: var(--red-dull);
     height: 91.5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+
+.item{
+    margin: 1rem 1rem;
+    padding: 0.9rem;
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--red-vibrant);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+
+.item:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+  .heading h3{
+      color: var(--white);
+      font-family: var(--font-heading);
+  }
 
 .btnDiv{
     height: 100%;
@@ -55,9 +82,9 @@ button {
     border: none;
     color: var(--white);
     text-align: center;
-    font-size: 28px;
+    /* font-size: 28px; */
     padding: 20px;
-    width: 300px;
+    /* width: 300px; */
     transition: all 0.4s;
     cursor: pointer;
     margin: 5px;
