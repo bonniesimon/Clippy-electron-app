@@ -95,3 +95,7 @@ button:hover{
     color: var(--red-vibrant);
     background-color: var(--black-faded);
 }
+
+button:focus{
+    outline-color: var(--white);
+}
