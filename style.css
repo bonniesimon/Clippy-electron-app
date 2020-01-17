@@ -64,7 +64,7 @@ main{
 }
 
   .heading h3{
-      color: var(--white);
+      color: var(--black);
       font-family: var(--font-heading);
   }
 
@@ -77,6 +77,7 @@ main{
 
 button {
     display: inline-block;
+    font-family: var(--font-normal);
     /* border-radius: 4px;  */
     background-color: var(--black);
     border: none;
