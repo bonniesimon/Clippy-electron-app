@@ -1,4 +1,5 @@
-const copyToClipboard = () => {
+const copyToClipboard = (type) => {
+    console.log(type);
     let str = 'thisIsMyPassword';
     const element = document.createElement('textarea');
     element.value = str;
@@ -9,11 +10,17 @@ const copyToClipboard = () => {
     element.select();
     document.execCommand('copy');
     document.body.removeChild(element);
-    alert('Copied');
+    // alert('Copied');
 };
 
 
 let emailBtn = document.getElementById('email-btn');
+let passwordBtn = document.getElementById('password-btn');
 
 
-emailBtn.addEventListener('click',copyToClipboard);
+emailBtn.addEventListener('click',()=>{
+    copyToClipboard('email');
+});
+passwordBtn.addEventListener('click',()=>{
+    copyToClipboard('password');
+});
