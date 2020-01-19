@@ -1,3 +1,7 @@
+/**
+ * TODO: add an authentication page; ie, add a page to login and then only can someone access this clipboard.
+ */
+
 const electron = require('electron');
 const url = require('url');
 const path = require('path');
