@@ -1,3 +1,6 @@
+/**
+ * *||Code to copy stuff to clipboard||
+ */
 const copyToClipboard = (type) => {
     console.log(type);
     let str = 'thisIsMyPassword';
