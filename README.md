@@ -6,6 +6,6 @@ I made this so that my brother doesnt need me to type out the long passwords tha
 
 
 ### What I've Learned
--How to setup electron project.
--Basic file structure of electron.
--Main process and Renderer process in electron.
+- How to setup electron project.
+- Basic file structure of electron.
+- Main process and Renderer process in electron.
