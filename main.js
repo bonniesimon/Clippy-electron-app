@@ -36,7 +36,7 @@ function createWindow(){
 
 
     //Open DevTools
-    win.webContents.openDevTools();
+    // win.webContents.openDevTools();
     child.webContents.openDevTools();
 
     // win.loadURL(url.format({

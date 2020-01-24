@@ -1,0 +1,14 @@
+@import url('style.css');
+
+nav{
+    background-color: var(--red-dull);
+    color: var(--black);
+}
+
+
+.loginDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
