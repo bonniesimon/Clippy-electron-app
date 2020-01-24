@@ -3,7 +3,7 @@
  */
 const copyToClipboard = (type) => {
     console.log(type);
-    let str = 'thisIsMyPassword';
+    let str = type;
     const element = document.createElement('textarea');
     element.value = str;
     element.setAttribute('readonly','');

@@ -6,10 +6,10 @@ const electron = require('electron');
 const url = require('url');
 const path = require('path');
 
-const {app, BrowserWindow} = require('electron');
+const {app, BrowserWindow, ipcMain} = require('electron');
 require('electron-reload')(__dirname);
 
-let win;
+let win, child;
 function createWindow(){
     win = new BrowserWindow({
         title: 'ClippY',
@@ -17,15 +17,30 @@ function createWindow(){
         height:400,
         width:600,
         maxHeight:500,
-        maxWidth:600
+        maxWidth:600,
+        webPreferences:{
+            nodeIntegration:true
+        }
     });
+
+    child = new BrowserWindow({
+        parent:win,
+        height:400,
+        width:600,
+        maxHeight:500,
+        maxWidth:600,
+        webPreferences:{
+            nodeIntegration:true
+        }
+    })
 
 
     //Open DevTools
     win.webContents.openDevTools();
+    child.webContents.openDevTools();
 
     // win.loadURL(url.format({
-    //     pathname : path.join(__dirname, 'index.html'),
+    //     pathname : path.join('file://',__dirname, 'index.html'),
     //     protocol: 'file',
     //     slashes : true
     // }))
@@ -34,13 +49,14 @@ function createWindow(){
      * *To use live reload
      */
     win.loadURL(`file://${__dirname}/index.html`);
+    child.loadURL(`file://${__dirname}/login.html`);
 
+    // win.on('ready-to-show', ()=>{
+        //     win.show();
+        //     win.focus();
+        // });
+        
     //When WIndow closed
-    win.on('ready-to-show', ()=>{
-        win.show();
-        win.focus();
-    });
-
     win.on('closed', () => {
         // Dereference the window object, usually you would store windows
         // in an array if your app supports multi windows, this is the time
@@ -48,6 +64,13 @@ function createWindow(){
         win = null
       })
 }
+
+ipcMain.on('entry-accepted',(event, arg)=>{
+    if(arg == 'ping'){
+        win.show();
+        child.hide();
+    }
+})
 
 
 app.on('ready',createWindow);
