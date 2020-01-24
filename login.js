@@ -12,3 +12,11 @@ submitBtn.addEventListener('click', (e)=>{
         ipc.sendSync('entry-accepted', 'ping');
     }
 })
+submitBtn.addEventListener('enter', (e)=>{
+    e.preventDefault();
+    console.log(loginPassword.value)
+    if(loginPassword.value == "admin"){
+        console.log("Succesfull login");
+        ipc.sendSync('entry-accepted', 'ping');
+    }
+})

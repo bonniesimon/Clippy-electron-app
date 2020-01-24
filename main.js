@@ -25,10 +25,10 @@ function createWindow(){
 
     child = new BrowserWindow({
         parent:win,
-        height:400,
-        width:600,
-        maxHeight:500,
-        maxWidth:600,
+        height:500,
+        width:300,
+        maxHeight:700,
+        maxWidth:500,
         webPreferences:{
             nodeIntegration:true
         }
