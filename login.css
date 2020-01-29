@@ -10,6 +10,11 @@ main{
 }
 
 
+
+.loginText h3{
+    font-size: 1.2rem;
+}
+
 .loginDiv form{
     display: flex;
     flex-direction: column;
