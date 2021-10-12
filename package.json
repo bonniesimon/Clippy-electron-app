@@ -4,7 +4,7 @@
   "description": "A simple electron app with copy to clipboard feature.",
   "main": "main.js",
   "dependencies": {
-    "electron": "^7.1.9"
+    "electron": "^11.5.0"
   },
   "devDependencies": {
     "electron-reload": "^1.5.0"
